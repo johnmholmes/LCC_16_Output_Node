@@ -47,6 +47,8 @@
 #include "OpenLcbCore.h"
 #include "OpenLCBHeader.h"        // System house-keeping.
 
+
+
 extern "C" {                      // the following are defined as external
   #define N(x) xN(x)              // allows the insertion of value (x)
   #define xN(x) #x                // .. into the CDI string.
@@ -58,52 +60,65 @@ extern "C" {                      // the following are defined as external
        // vvvvv Enter User definitions below CDIheader line vvvvv
        //       It must match the Memstruct struct{} below
        CDIheader R"(
-          <group replication=')" N(NUM_ACTION) R"('>
-            <name>Actions</name>
-            <repname>Action </repname>
-            <eventid><name>Event for action</name></eventid>
-            <int size="1"><name>pin#</name>
-                <map>
-                  <relation><property>0</property><value>None</value></relation>
-                  <relation><property>1</property><value>4</value></relation>
-                  <relation><property>2</property><value>16</value></relation>
-                  <relation><property>3</property><value>17</value></relation>
-                  <relation><property>4</property><value>18</value></relation>
-                  <relation><property>5</property><value>19</value></relation>
-                  <relation><property>6</property><value>21</value></relation>
-                  <relation><property>7</property><value>22</value></relation>
-                  <relation><property>8</property><value>23</value></relation>
-                  <relation><property>9</property><value>13</value></relation>
-                  <relation><property>10</property><value>12</value></relation>
-                  <relation><property>11</property><value>14</value></relation>
-                  <relation><property>12</property><value>27</value></relation>
-                  <relation><property>13</property><value>26</value></relation>
-                  <relation><property>14</property><value>25</value></relation>
-                  <relation><property>15</property><value>33</value></relation>
-                  <relation><property>16</property><value>32</value></relation>
+          <group replication="4">
+    <name>Action Groups</name>
+    <repname>Actions 1-10</repname>
+    <repname>Actions 11-20</repname>
+    <repname>Actions 21-30</repname>
+    <repname>Actions 31-40</repname>
 
-                </map>
-            </int>
-            <int size="1"><name>action</name>
-                <map>
-                  <relation><property>0</property><value>None</value></relation>
-                  <relation><property>1</property><value>Low</value></relation>
-                  <relation><property>2</property><value>High</value></relation>
-                  <relation><property>3</property><value>Flash</value></relation>
-                  <relation><property>4</property><value>Double Strobe</value></relation>
-                  <relation><property>5</property><value>Random</value></relation>
-                  <relation><property>6</property><value>Fire (uses two pins)</value></relation>
-                </map>
-            </int>
-            <int size="1">
-              <name>Parameter 1</name>
-              <hints><slider tickSpacing='50' immediate='yes' showValue='yes'> </slider></hints>
-            </int>
-            <int size="1">
-              <name>Parameter 2</name>
-              <hints><slider tickSpacing='50' immediate='yes' showValue='yes'> </slider></hints>
-            </int>
-          </group>          
+    <group replication="10">
+        <name>Actions</name>
+        <repname>Action </repname>
+        <eventid><name>Event for action</name></eventid>
+
+        <int size="1">
+            <name>pin#</name>
+            <map>
+                <relation><property>0</property><value>None</value></relation>
+                <relation><property>1</property><value>4</value></relation>
+                <relation><property>2</property><value>16</value></relation>
+                <relation><property>3</property><value>17</value></relation>
+                <relation><property>4</property><value>18</value></relation>
+                <relation><property>5</property><value>19</value></relation>
+                <relation><property>6</property><value>21</value></relation>
+                <relation><property>7</property><value>22</value></relation>
+                <relation><property>8</property><value>23</value></relation>
+                <relation><property>9</property><value>13</value></relation>
+                <relation><property>10</property><value>12</value></relation>
+                <relation><property>11</property><value>14</value></relation>
+                <relation><property>12</property><value>27</value></relation>
+                <relation><property>13</property><value>26</value></relation>
+                <relation><property>14</property><value>25</value></relation>
+                <relation><property>15</property><value>33</value></relation>
+                <relation><property>16</property><value>32</value></relation>
+            </map>
+        </int>
+
+        <int size="1">
+            <name>action</name>
+            <map>
+                <relation><property>0</property><value>None</value></relation>
+                <relation><property>1</property><value>Low</value></relation>
+                <relation><property>2</property><value>High</value></relation>
+                <relation><property>3</property><value>Flash</value></relation>
+                <relation><property>4</property><value>Double Strobe</value></relation>
+                <relation><property>5</property><value>Random</value></relation>
+                <relation><property>6</property><value>Fire (uses two pins)</value></relation>
+            </map>
+        </int>
+
+        <int size="1">
+            <name>Parameter 1</name>
+            <hints><slider tickSpacing='50' immediate='yes' showValue='yes'> </slider></hints>
+        </int>
+
+        <int size="1">
+            <name>Parameter 2</name>
+            <hints><slider tickSpacing='50' immediate='yes' showValue='yes'> </slider></hints>
+        </int>
+    </group>
+</group>
        )" CDIfooter;
        // ^^^^^ Enter User definitions above CDIfooter line ^^^^^
 }

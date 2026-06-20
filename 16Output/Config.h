@@ -1,4 +1,3 @@
-
 // To set a new nodeid edit the next line
 #define NODE_ADDRESS  5,1,1,1,0x8E,0x01  // must be unique from an address space owned by you or DIY
 
@@ -24,25 +23,39 @@
 //#include "GCSerial.h"
 //#define NOCAN
 
+//************** End of USER DEFINTIONS *****************************
+
+#define ESP32_BOARD // Needed for sketch to work.
+
 #define CAN_RX_PIN (gpio_num_t) 15
 #define CAN_TX_PIN (gpio_num_t) 2
 
-#define NUM_CHANNEL 16        // number of pins
-uint8_t pin[NUM_CHANNEL] = {4,16,17,18,19,21,22,23,13,12,14,27,26,25,33,32 };  // 16 channel
-uint8_t currentEvent[NUM_CHANNEL];
-#define NUM_ACTION 40         // number of evets/actions
-#define NUM_EVENT NUM_ACTION  // number of action in total
+// ====================== ACTION CONFIGURATION ======================
+#define NUM_ACTION       40     // Total number of actions
+#define NUM_ACTION_SETS   4     // Number of groups in CDI
+#define NUM_APS          10     // Actions Per Set (group)
+#define NUM_EVENT        NUM_ACTION   // Must match total actions for EID table
 
-uint8_t state[NUM_CHANNEL]; 
-long timer[NUM_CHANNEL];
+uint8_t currentEvent[NUM_ACTION];
+uint8_t state[NUM_ACTION];
+long    timer[NUM_ACTION];
 
+// Optional helper
+inline int getActionIndex(int group, int action) {
+    return group * NUM_APS + action;
+}
+
+// ====================== PIN CONFIGURATION ======================
+#define NUM_CHANNEL 16
+uint8_t pin[NUM_CHANNEL] = {4,16,17,18,19,21,22,23,13,12,14,27,26,25,33,32 };
+
+// ====================== EEPROM ======================
 #define EEPROMSIZE 4096
-#define EEPROMbegin { EEPROM.begin(EEPROMSIZE); dP("\nEEPROM begin "); dP(EEPROMSIZE)
+#define EEPROMbegin { EEPROM.begin(EEPROMSIZE); dP("\nEEPROM begin "); dP(EEPROMSIZE); }
 #define EEPROMcommit { EEPROM.commit(); dP("EEPROM COMMIT"); }
 
 // Board definitions
-#define MANU "OpenLCB"           // The manufacturer of node
-#define MODEL "16 Output"        // The model of the board
-#define HWVERSION "0.1"          // Hardware version
-#define SWVERSION "0.1"          // Software version
-
+#define MANU "OpenLCB"
+#define MODEL "16 Output"
+#define HWVERSION "0.1"
+#define SWVERSION "0.1"
