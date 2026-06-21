@@ -416,7 +416,6 @@ void setup() {
 
 #if 1
   // test values
- 
   NODECONFIG.write(EEADDR(action[0].desc),     'O');
   NODECONFIG.write(EEADDR(action[0].desc) + 1, 'f');
   NODECONFIG.write(EEADDR(action[0].desc) + 2, 'f');
