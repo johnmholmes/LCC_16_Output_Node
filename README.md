@@ -94,6 +94,7 @@ Each action (40 total) configures:
    - Choose pins and actions
    - Set timing parameters
 5. Trigger events from your layout logic.
+6. The node comes with 8 pre-defind examples you can use for pin. For fire it uses the next pin in the array so if pin 4 it uses pin 5 as well for a better effect.
 
 ## Development
 
