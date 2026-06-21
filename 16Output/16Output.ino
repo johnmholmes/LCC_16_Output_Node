@@ -416,83 +416,45 @@ void setup() {
 
 #if 1
   // test values
-  NODECONFIG.write(EEADDR(action[0].desc),     'O');
-  NODECONFIG.write(EEADDR(action[0].desc) + 1, 'f');
-  NODECONFIG.write(EEADDR(action[0].desc) + 2, 'f');
-  NODECONFIG.write(EEADDR(action[0].desc) + 3, '\0'); // Don't forget the null-terminator!
+  NODECONFIG.put( EEADDR( action[0].desc ), ESTRING ("Off") );
   NODECONFIG.write(EEADDR(action[0].pini), 1);
   NODECONFIG.write(EEADDR(action[0].action), aLOW);
 
-  NODECONFIG.write(EEADDR(action[1].desc),     'O');
-  NODECONFIG.write(EEADDR(action[1].desc) + 1, 'n');
-  NODECONFIG.write(EEADDR(action[1].desc) + 3, '\0'); // Don't forget the null-terminator!
+  NODECONFIG.put( EEADDR( action[1].desc ), ESTRING ("On") );
   NODECONFIG.write(EEADDR(action[1].pini), 1);
   NODECONFIG.write(EEADDR(action[1].action), aHIGH);
 
-  NODECONFIG.write(EEADDR(action[2].desc),     'F');
-  NODECONFIG.write(EEADDR(action[2].desc) + 1, 'l');
-  NODECONFIG.write(EEADDR(action[2].desc) + 2, 'a');
-  NODECONFIG.write(EEADDR(action[2].desc) + 3, 's');
-  NODECONFIG.write(EEADDR(action[2].desc) + 4, 'h');
-  NODECONFIG.write(EEADDR(action[2].desc) + 5, '\0'); // Don't forget the null-terminator! 
+  NODECONFIG.put( EEADDR( action[2].desc ), ESTRING ("Flash") );
   NODECONFIG.write(EEADDR(action[2].pini), 1);
   NODECONFIG.write(EEADDR(action[2].action), aFLASH);
   NODECONFIG.write(EEADDR(action[2].durn), 10);
   NODECONFIG.write(EEADDR(action[2].rate), 10);
 
-  NODECONFIG.write(EEADDR(action[3].desc),     'S');
-  NODECONFIG.write(EEADDR(action[3].desc) + 1, 't');
-  NODECONFIG.write(EEADDR(action[3].desc) + 2, 'r');
-  NODECONFIG.write(EEADDR(action[3].desc) + 3, 'o');
-  NODECONFIG.write(EEADDR(action[3].desc) + 4, 'b');
-  NODECONFIG.write(EEADDR(action[3].desc) + 5, 'e');  
-  NODECONFIG.write(EEADDR(action[3].desc) + 6, '\0'); // Don't forget the null-terminator! 
+  NODECONFIG.put( EEADDR( action[3].desc ), ESTRING ("Strobe") );
   NODECONFIG.write(EEADDR(action[3].pini), 1);
   NODECONFIG.write(EEADDR(action[3].action), aDSTROBE);
   NODECONFIG.write(EEADDR(action[3].durn), 2);
   NODECONFIG.write(EEADDR(action[3].rate), 10);
 
-  NODECONFIG.write(EEADDR(action[4].desc),     'R');
-  NODECONFIG.write(EEADDR(action[4].desc) + 1, 'a');
-  NODECONFIG.write(EEADDR(action[4].desc) + 2, 'n');
-  NODECONFIG.write(EEADDR(action[4].desc) + 3, 'd');
-  NODECONFIG.write(EEADDR(action[4].desc) + 4, '1');
-  NODECONFIG.write(EEADDR(action[4].desc) + 5, '\0'); // Don't forget the null-terminator! 
+  NODECONFIG.put( EEADDR( action[4].desc ), ESTRING ("Random 1") );
   NODECONFIG.write(EEADDR(action[4].pini), 1);
   NODECONFIG.write(EEADDR(action[4].action), aRANDOM);
   NODECONFIG.write(EEADDR(action[4].durn), 20);
   NODECONFIG.write(EEADDR(action[4].rate), 20);
 
-  NODECONFIG.write(EEADDR(action[5].desc),     'R');
-  NODECONFIG.write(EEADDR(action[5].desc) + 1, 'a');
-  NODECONFIG.write(EEADDR(action[5].desc) + 2, 'n');
-  NODECONFIG.write(EEADDR(action[5].desc) + 3, 'd');
-  NODECONFIG.write(EEADDR(action[5].desc) + 4, '2');
-  NODECONFIG.write(EEADDR(action[5].desc) + 5, '\0'); // Don't forget the null-terminator! 
+  NODECONFIG.put( EEADDR( action[5].desc ), ESTRING ("Random 2") );
   NODECONFIG.write(EEADDR(action[5].pini), 1);
   NODECONFIG.write(EEADDR(action[5].action), aRANDOM);
   NODECONFIG.write(EEADDR(action[5].durn), 5);
   NODECONFIG.write(EEADDR(action[5].rate), 3);
 
-  NODECONFIG.write(EEADDR(action[6].desc),     'F');
-  NODECONFIG.write(EEADDR(action[6].desc) + 1, 'i');
-  NODECONFIG.write(EEADDR(action[6].desc) + 2, 'r');
-  NODECONFIG.write(EEADDR(action[6].desc) + 3, 'e');
-  NODECONFIG.write(EEADDR(action[6].desc) + 4, '\0'); // Don't forget the null-terminator!
+  NODECONFIG.put( EEADDR( action[6].desc ), ESTRING ("Fire on") );
   NODECONFIG.write(EEADDR(action[6].pini), 1);
   NODECONFIG.write(EEADDR(action[6].action), aFIRE);
   NODECONFIG.write(EEADDR(action[6].durn), 135);
   NODECONFIG.write(EEADDR(action[6].rate), 160);
 
-  NODECONFIG.write(EEADDR(action[7].desc),     'F');
-  NODECONFIG.write(EEADDR(action[7].desc) + 1, 'i');
-  NODECONFIG.write(EEADDR(action[7].desc) + 2, 'r');
-  NODECONFIG.write(EEADDR(action[7].desc) + 3, 'e');
-  NODECONFIG.write(EEADDR(action[7].desc) + 4, ' ');
-  NODECONFIG.write(EEADDR(action[7].desc) + 5, 'O');
-  NODECONFIG.write(EEADDR(action[7].desc) + 6, 'f');
-  NODECONFIG.write(EEADDR(action[7].desc) + 7, 'f');
-  NODECONFIG.write(EEADDR(action[7].desc) + 8, '\0'); // Don't forget the null-terminator!
+  NODECONFIG.put( EEADDR( action[7].desc ), ESTRING ("Fire off") );
   NODECONFIG.write(EEADDR(action[7].pini), 1);
   NODECONFIG.write(EEADDR(action[7].action), aFIRE);
   NODECONFIG.write(EEADDR(action[7].durn), 0);
