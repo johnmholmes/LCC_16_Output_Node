@@ -32,13 +32,14 @@
 
 */
 
-//   David Harris 2019, adapted from
-//   Bob Jacobsen 2010, 2012
-//      based on examples by Alex Shepherd and David Harris
-//   Updated 2024.09 DPH
-//   Updated 2025.1 John Holmes
-//==============================================================
+/*   
+   David Harris 2019, adapted from
+   Bob Jacobsen 2010, 2012
+   based on examples by Alex Shepherd and David Harris
+   Updated 2024.09 DPH
+   Updated 2026.06 John Holmes
 
+*/
 #include "Config.h"         // Contains configuration, see "Config.h"
 #include "ACAN_ESP32Can.h"  // uses ACan class, comment out if using GCSerial
 #include "HouseKeeping.h"   // Used for development purposes only do not touch
@@ -140,7 +141,6 @@ typedef struct {
   struct {
     char desc[24];
     EventID eid;
-    ;  // Consumed eventID which sets this output-pin
     uint8_t pini;
     char action;
     uint8_t durn;
@@ -225,7 +225,6 @@ void pceCallback(uint16_t index) {
   PV(state[i]);
 }
 
-
 // userInitAll() -- include any initialization after Factory reset "Mfg clear" or "User clear"
 //  -- clear or pre-define text variables.
 // USER defined
@@ -257,14 +256,17 @@ void userHardReset() {
   REBOOT;  // defined in processor.h for each mpu
 }
 
-// ===== Callback from a Configuration write =====
-// Use this to detect changes in the node's configuration
-// This may be useful to take immediate action on a change.
-// param address - address in space of change
-// param length  - length of change
-// NB: if address=0 and length==0xffff, then user indicated UPDATE_COMPLETE
-//
-// USER defined
+/*
+ ===== Callback from a Configuration write =====
+ Use this to detect changes in the node's configuration
+ This may be useful to take immediate action on a change.
+ param address - address in space of change
+ param length  - length of change
+ NB: if address=0 and length==0xffff, then user indicated UPDATE_COMPLETE
+
+ USER defined
+*/
+
 void userConfigWritten(uint32_t address, uint16_t length, uint16_t func) {
 }
 
@@ -395,7 +397,6 @@ void doActions() {
   }
 }
 
-
 // ==== Setup does initial configuration =============================
 void setup() {
 #ifdef DEBUG
@@ -415,7 +416,6 @@ void setup() {
 
 #if 1
   // test values
-
  
   NODECONFIG.write(EEADDR(action[0].desc),     'O');
   NODECONFIG.write(EEADDR(action[0].desc) + 1, 'f');
@@ -518,7 +518,6 @@ void setup() {
   }
 #endif
 }
-
 
 // ==== MAIN LOOP ===========================================
 //  -- this performs system functions, such as CAN alias maintenence
