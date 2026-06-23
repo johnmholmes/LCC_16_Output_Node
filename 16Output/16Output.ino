@@ -79,7 +79,7 @@ extern "C" {        // the following are defined as external
         <eventid><name>Event for action</name></eventid>
 
         <int size="1">
-            <name>pin#</name>
+            <name>Chose pin from dropdown list for the Action required. </name>
             <map>
                 <relation><property>0</property><value>None</value></relation>
                 <relation><property>1</property><value>4</value></relation>
@@ -102,7 +102,7 @@ extern "C" {        // the following are defined as external
         </int>
 
         <int size="1">
-            <name>action</name>
+            <name>Chose the action you require for your chosen pin</name>
             <map>
                 <relation><property>0</property><value>None</value></relation>
                 <relation><property>1</property><value>Low</value></relation>
@@ -116,12 +116,12 @@ extern "C" {        // the following are defined as external
 
         <int size="1">
             <name>Parameter 1</name>
-            <hints><slider tickSpacing='50' immediate='yes' showValue='yes'> </slider></hints>
+            <hints><slider tickSpacing='85' immediate='yes' showValue='yes'> </slider></hints>
         </int>
 
         <int size="1">
             <name>Parameter 2</name>
-            <hints><slider tickSpacing='50' immediate='yes' showValue='yes'> </slider></hints>
+            <hints><slider tickSpacing='85' immediate='yes' showValue='yes'> </slider></hints>
         </int>
     </group>
 </group>
