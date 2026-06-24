@@ -79,7 +79,7 @@ extern "C" {        // the following are defined as external
         <eventid><name>Event for action</name></eventid>
 
         <int size="1">
-            <name>Chose pin from dropdown list for the Action required. </name>
+            <name>Chose the pin from dropdown list for the Action that is required . </name>
             <map>
                 <relation><property>0</property><value>None</value></relation>
                 <relation><property>1</property><value>4</value></relation>
@@ -102,7 +102,7 @@ extern "C" {        // the following are defined as external
         </int>
 
         <int size="1">
-            <name>Chose the action you require for your chosen pin</name>
+            <name>Chose the action you require for your chosen pin this choose the algorithm to be used for when you set the values for Parameter 1 & 2 in the next step</name>
             <map>
                 <relation><property>0</property><value>None</value></relation>
                 <relation><property>1</property><value>Low</value></relation>
@@ -115,12 +115,12 @@ extern "C" {        // the following are defined as external
         </int>
 
         <int size="1">
-            <name>Parameter 1</name>
+            <name>Parameter 1 Is the On Duration</name>
             <hints><slider tickSpacing='85' immediate='yes' showValue='yes'> </slider></hints>
         </int>
 
         <int size="1">
-            <name>Parameter 2</name>
+            <name>Parameter 2 is the Off Duration</name>
             <hints><slider tickSpacing='85' immediate='yes' showValue='yes'> </slider></hints>
         </int>
     </group>
