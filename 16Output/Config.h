@@ -57,5 +57,5 @@ uint8_t pin[NUM_CHANNEL] = {4,16,17,18,19,21,22,23,13,12,14,27,26,25,33,32 };
 // Board definitions
 #define MANU "OpenLCB"
 #define MODEL "16 Output"
-#define HWVERSION "0.1"
-#define SWVERSION "0.1"
+#define HWVERSION "ESP Basic 1"
+#define SWVERSION "1.0.1"
