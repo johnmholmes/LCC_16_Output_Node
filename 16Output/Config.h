@@ -1,13 +1,13 @@
 #ifndef CONFIG_H
 #define CONFIG_H
 
+//----------------------Either Use your MERG number or your own range If using your own comment out the lines 6 & 7 and uncomment line 10-------
 // To set a new nodeid based on your MERG membership number, edit the next line
 #define MERG_NUMBER 8528 // Add MERG membership number (in decimal)
 #define NODE_ADDRESS 0x03, 0x04, (MERG_NUMBER >> 16), (MERG_NUMBER >> 8), (MERG_NUMBER & 0xFF), 1 // The last digit needs to be unique to your nodes in this case its is node 1
 
-
 // To set a new nodeid edit the next line
-#define NODE_ADDRESS  0x05,0x01,0x01,0x01,0x8E,0x03  // must be unique from an address space owned by you or DIY
+//#define NODE_ADDRESS  0x05,0x01,0x01,0x01,0x8E,0x03  // must be unique from an address space owned by you or DIY
 
 // To Force Reset EEPROM to Factory Defaults set this value to 1, else 0.
 // Need to do this at least once.
